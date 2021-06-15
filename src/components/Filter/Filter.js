@@ -9,6 +9,7 @@ export default function Filter({ value, onChangeFilter }) {
         type="text"
         value={value}
         onChange={(e) => onChangeFilter(e.target.value)}
+       
       />
     </div>
   );
@@ -17,5 +18,5 @@ export default function Filter({ value, onChangeFilter }) {
 
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
-  onchangeFilter: PropTypes.func.isRequired,
+  onСhangeFilter: PropTypes.func.isRequired,
 };
