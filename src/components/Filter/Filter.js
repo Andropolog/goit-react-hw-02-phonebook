@@ -9,6 +9,7 @@ export default function Filter({ value, onChangeFilter }) {
         type="text"
         value={value}
         onChange={(e) => onChangeFilter(e.target.value)}
+       
       />
     </div>
   );
