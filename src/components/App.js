@@ -17,7 +17,7 @@ export default class App extends Component {
 
     if (searchSameName) {
       alert(`${task.name} is already in contacts`);
-    } else if (task.name.length === 0) {
+    } else if (task.name.length) {
       alert("Fields must be filled!");
     } else {
       const contact = {
@@ -65,7 +65,7 @@ export default class App extends Component {
         {visibleContacts.length > 1 && (
           <Filter value={filter} onChangeFilter={this.changeFilter} />
         )}
-        {visibleContacts.length > 0 && (
+        {visibleContacts.length && (
           <ContactList
             contacts={visibleContacts}
             onRemoveContact={this.removeContact}
