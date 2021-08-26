@@ -3,10 +3,11 @@ import { v4 as uuidv4 } from "uuid";
 import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
 import ContactForm from "./ContactForm/ContactForm";
+import { contacts } from "./contacts.json"
 
 export default class App extends Component {
   state = {
-    contacts: [],
+    contacts,
     filter: "",
   };
 
@@ -17,7 +18,7 @@ export default class App extends Component {
 
     if (searchSameName) {
       alert(`${task.name} is already in contacts`);
-    } else if (task.name.length) {
+    } else if (task.name.length === 0) {
       alert("Fields must be filled!");
     } else {
       const contact = {
@@ -59,7 +60,6 @@ export default class App extends Component {
     return (
       <div>
         <h1>Phonebook</h1>
-
         <ContactForm onAddContact={this.addContact} />
         <h2>Contacts</h2>
         {visibleContacts.length > 1 && (
